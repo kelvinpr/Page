@@ -1,0 +1,101 @@
+/* Estilos generales para todas las pantallas */
+body {
+    background: linear-gradient(to bottom, #FF69B4, #FF1493);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.gift-box {
+    position: relative;
+}
+
+#gift-image {
+    width: 200px; /* Tamaño de la imagen del regalo */
+    transition: transform 0.1s ease-in-out;
+}
+
+/* Estilos generales para pantallas pequeñas */
+@media screen and (max-width: 768px) {
+    #gift-image {
+        width: 150px; /* Reducir el tamaño de la imagen para pantallas pequeñas */
+    }
+}
+
+/* Estilos generales para pantallas medianas */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    #gift-image {
+        width: 180px; /* Tamaño de la imagen un poco más grande para pantallas medianas */
+    }
+}
+
+/* Estilos generales para pantallas grandes */
+@media screen and (min-width: 1025px) {
+    /* Puedes agregar estilos adicionales para pantallas grandes aquí */
+}
+
+/* Tu estilo CSS existente aquí */
+
+#confetti-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.shake {
+    animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5px);
+    }
+    50% {
+        transform: translateX(5px);
+    }
+    75% {
+        transform: translateX(-5px);
+    }
+    100% {
+        transform: translateX(5px);
+    }
+}
+
+/* Estilos para los GIF (inicialmente ocultos) */
+#left-gif,
+#right-gif {
+    display: none;
+    max-width: 200px; /* Ajusta el ancho máximo según tu preferencia */
+    position: absolute;
+    bottom: 10px; /* Ajusta la posición vertical según tu preferencia */
+}
+
+#left-gif {
+    left: -200px; /* Ajusta la posición izquierda según tu preferencia */
+}
+
+#right-gif {
+    right: -200px; /* Ajusta la posición derecha según tu preferencia */
+}
+
+#gif-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Coloca el fondo detrás de todo */
+    display: none;
+    background-image: url('coraznes.gif'); /* Reemplaza 'tu_fondo.gif' con la ruta de tu GIF */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
